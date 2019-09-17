@@ -105,6 +105,7 @@
                                 </prototypes>
                                 <connections>
                                     <outlet property="dataSource" destination="BYZ-38-t0r" id="Tev-CT-B6m"/>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="Kx8-ap-dMe"/>
                                 </connections>
                             </tableView>
                         </subviews>
@@ -152,6 +153,25 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="VIi-Nl-BrA" customClass="CosmosView" customModule="Cosmos">
+                                <rect key="frame" x="33" y="396" width="275" height="49"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="starSize">
+                                        <real key="value" value="30"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="totalStars">
+                                        <integer key="value" value="5"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="rating">
+                                        <real key="value" value="5"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="fillMode">
+                                        <integer key="value" value="1"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
@@ -161,6 +181,10 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="m8c-vk-Asq"/>
                     </view>
+                    <connections>
+                        <outlet property="cosMisView" destination="VIi-Nl-BrA" id="u6k-wx-hBW"/>
+                        <outlet property="moviewImage" destination="sTB-3T-Qkr" id="SHB-3T-dLg"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="r8i-S2-xhc" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

@@ -35,6 +35,16 @@ class ViewController: UIViewController {
             }
         }
     }
+  
+  override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+    if segue.identifier == "viewGoToDetail" {
+      if let viewController = segue.destination as? DetailViewController,
+        let sender = sender as? results {
+        viewController.detailMovie = sender
+      }
+      
+    }
+  }
 }
 
 extension ViewController :UITableViewDataSource {
@@ -56,5 +66,10 @@ extension ViewController :UITableViewDataSource {
     }
     
     
+}
+extension ViewController :UITableViewDelegate {
+  func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+    performSegue(withIdentifier: "viewGoToDetail", sender: movies[indexPath.row])
+  }
 }
 

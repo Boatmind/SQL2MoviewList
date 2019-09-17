@@ -9,15 +9,26 @@
 import UIKit
 import Cosmos
 class DetailViewController: UIViewController {
-  lazy var cosmosView : CosmosView = {
-       var view = CosmosView()
-       return view
-  }()
-    override func viewDidLoad() {
-        super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+  var detailMovie : results?
+  @IBOutlet weak var cosMisView: CosmosView!
+  
+  @IBOutlet weak var moviewImage: UIImageView!
+  
+  
+  override func viewDidLoad() {
+    super.viewDidLoad()
+    
+    cosMisView.didTouchCosmos = { ratting in
+      print(ratting)
     }
+    
+    func setting(movie: results) {
+      if let urlposter = movie.poster_path {
+        let poster = URL(string: "https://image.tmdb.org/t/p/original\(urlposter)")
+        moviewImage.kf.setImage(with: poster)
+      }
+    }
+  }
     
 
     /*
