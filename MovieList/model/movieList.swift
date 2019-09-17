@@ -17,7 +17,7 @@ struct movieList:Codable {
 
 struct results:Codable {
     var popularity:Double
-    //var id:Int?
+    var id:Int?
     var video:Bool
     var vote_count:Int
     var vote_average:Double
@@ -29,7 +29,7 @@ struct results:Codable {
     var poster_path:String?
     private enum CodingKeys: String, CodingKey {
         case popularity
-       // case id
+        case id
         case video
         case vote_count
         case vote_average

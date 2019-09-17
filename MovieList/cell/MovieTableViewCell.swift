@@ -32,7 +32,7 @@ class MovieTableViewCell: UITableViewCell {
       movieImage.kf.setImage(with: poster)
       backDropImage.kf.setImage(with: backdrop)
     }
-    let sumratting = (Int(movieIndex.vote_average) * Int(movieIndex.vote_count)) 
+    let sumratting = (Int(movieIndex.vote_average) * Int(movieIndex.vote_count)) / Int(movieIndex.vote_count)
     
     
     rattingLabel.text = String(sumratting)

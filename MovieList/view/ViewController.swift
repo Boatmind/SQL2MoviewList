@@ -10,7 +10,7 @@ import UIKit
 
 class ViewController: UIViewController {
     var movies : [results] = []
-    
+  
     @IBOutlet weak var movieTableView: UITableView!
     
     override func viewDidLoad() {
@@ -26,8 +26,11 @@ class ViewController: UIViewController {
             case .success(let movie):
                 
                 if let movie = movie {
-                    self?.movies = movie.results
+                  self?.movies = movie.results
+                  DispatchQueue.main.async {
                     self?.movieTableView.reloadData()
+                  }
+                  
                 }
                 
             case .failure(let error):
@@ -39,8 +42,9 @@ class ViewController: UIViewController {
   override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
     if segue.identifier == "viewGoToDetail" {
       if let viewController = segue.destination as? DetailViewController,
-        let sender = sender as? results {
-        viewController.detailMovie = sender
+        let sender = sender as? Int {
+        viewController.indexMovie = sender
+        
       }
       
     }
@@ -69,7 +73,10 @@ extension ViewController :UITableViewDataSource {
 }
 extension ViewController :UITableViewDelegate {
   func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-    performSegue(withIdentifier: "viewGoToDetail", sender: movies[indexPath.row])
+    
+   
+    performSegue(withIdentifier: "viewGoToDetail", sender: movies[indexPath.row].id)
+    
   }
 }
 

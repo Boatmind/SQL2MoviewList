@@ -48,4 +48,39 @@ class APIManager {
         }
         task.resume()
     }
+  
+  func getDetailMovie(urlString: String, completion: @escaping (Result<DetailMovieList?, APIError>) -> Void) {
+    guard var url = URLComponents(string: urlString) else {
+      return
+    }
+    url.queryItems = [
+      URLQueryItem(name: "api_key", value: "328c283cd27bd1877d9080ccb1604c91")
+    ]
+    
+    var request = URLRequest(url: url.url!)
+    
+    request.httpMethod = "GET"
+    let task = URLSession.shared.dataTask(with: request) { (data, response, error) in
+      
+      if let _ = error {
+        completion(.failure(.invalidData))
+      } else if let data = data, let response = response as? HTTPURLResponse {
+        
+        if response.statusCode == 200 {
+          
+          do {
+            let values = try JSONDecoder().decode(DetailMovieList.self, from: data)
+            
+            completion(.success(values))
+            
+          } catch  {
+            completion(.failure(.invalidJSON))
+            
+          }
+        }
+      }
+    }
+    task.resume()
+    
+  }
 }
