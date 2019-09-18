@@ -73,6 +73,7 @@ class DetailViewController: UIViewController {
     let scoreRatting = defaults.double(forKey: "\(indexMovie ?? 0)")
     
     cosMisView.rating = scoreRatting
+    cosMisView.text = String(scoreRatting)
     
   }
   
@@ -88,7 +89,9 @@ class DetailViewController: UIViewController {
       }
       
     }else {
-      
+         DispatchQueue.main.async {
+         self.genres.text = "-"
+      }
     }
     DispatchQueue.main.sync {
       language.text = data.original_language
