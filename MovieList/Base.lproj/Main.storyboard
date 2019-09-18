@@ -108,22 +108,41 @@
                                     <outlet property="delegate" destination="BYZ-38-t0r" id="Kx8-ap-dMe"/>
                                 </connections>
                             </tableView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JMc-qx-MTv">
+                                <rect key="frame" x="0.0" y="117" width="414" height="696"/>
+                                <subviews>
+                                    <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="EEv-v5-kB3">
+                                        <rect key="frame" x="188.5" y="329.5" width="37" height="37"/>
+                                        <color key="backgroundColor" red="1" green="0.30980800819999998" blue="0.21455023540000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                    </activityIndicatorView>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstItem="EEv-v5-kB3" firstAttribute="centerY" secondItem="JMc-qx-MTv" secondAttribute="centerY" id="ZXJ-2z-t40"/>
+                                    <constraint firstItem="EEv-v5-kB3" firstAttribute="centerX" secondItem="JMc-qx-MTv" secondAttribute="centerX" id="c0I-kF-YaK"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="JMc-qx-MTv" secondAttribute="bottom" id="6tk-5k-JUA"/>
+                            <constraint firstItem="JMc-qx-MTv" firstAttribute="top" secondItem="uF0-nu-Nt6" secondAttribute="bottom" id="8VL-Wl-BgA"/>
                             <constraint firstItem="KfC-6s-NHn" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="Qhr-7R-D2u"/>
                             <constraint firstItem="uF0-nu-Nt6" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="topMargin" constant="-15" id="Y0D-DR-a32"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="JMc-qx-MTv" secondAttribute="trailing" id="c4u-no-yWm"/>
                             <constraint firstItem="KfC-6s-NHn" firstAttribute="top" secondItem="uF0-nu-Nt6" secondAttribute="bottom" id="dVJ-6b-SwQ"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="KfC-6s-NHn" secondAttribute="trailing" id="dwK-wL-XRw"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="KfC-6s-NHn" secondAttribute="bottom" id="ltC-Gj-CYK"/>
                             <constraint firstItem="uF0-nu-Nt6" firstAttribute="leading" secondItem="KfC-6s-NHn" secondAttribute="leading" id="oqu-Hl-W9g"/>
                             <constraint firstItem="uF0-nu-Nt6" firstAttribute="trailing" secondItem="KfC-6s-NHn" secondAttribute="trailing" id="qyd-4R-n7K"/>
+                            <constraint firstItem="JMc-qx-MTv" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="zRM-9K-d83"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <navigationItem key="navigationItem" id="hzq-vH-phY"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
+                        <outlet property="loadingView" destination="JMc-qx-MTv" id="0gY-1O-txE"/>
                         <outlet property="movieTableView" destination="KfC-6s-NHn" id="BUl-mO-c3E"/>
                         <segue destination="W24-Ne-Fsx" kind="show" identifier="viewGoToDetail" id="HkN-lD-140"/>
                     </connections>
@@ -153,7 +172,7 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VIi-Nl-BrA" customClass="CosmosView" customModule="Cosmos">
+                            <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="VIi-Nl-BrA" customClass="CosmosView" customModule="Cosmos">
                                 <rect key="frame" x="109" y="413" width="218" height="30"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <userDefinedRuntimeAttributes>
@@ -171,25 +190,25 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </view>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lIp-1d-Htp">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lIp-1d-Htp">
                                 <rect key="frame" x="33" y="473" width="371" height="20.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="r2r-9C-2HH">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="r2r-9C-2HH">
                                 <rect key="frame" x="33" y="537" width="371" height="20.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uRL-hE-i6d">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uRL-hE-i6d">
                                 <rect key="frame" x="33" y="604" width="371" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mnX-Vw-CMO">
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mnX-Vw-CMO">
                                 <rect key="frame" x="195.5" y="633" width="46" height="30"/>
                                 <state key="normal" title="Button"/>
                                 <connections>

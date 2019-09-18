@@ -10,7 +10,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "MovieList/cell/MovieTableViewCell.swift"
-            timestampString = "590475950.189171"
+            timestampString = "590483223.193753"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "69"
@@ -26,7 +26,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "MovieList/ApiManager.swift"
-            timestampString = "590421696.853353"
+            timestampString = "590482407.551874"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "44"
@@ -42,7 +42,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "MovieList/ApiManager.swift"
-            timestampString = "590421696.853408"
+            timestampString = "590482407.5519331"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "75"
@@ -105,7 +105,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "MovieList/ApiManager.swift"
-            timestampString = "590421696.8537461"
+            timestampString = "590482407.551967"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "77"
@@ -121,7 +121,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "MovieList/ApiManager.swift"
-            timestampString = "590421696.853783"
+            timestampString = "590482407.551998"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "66"
@@ -137,7 +137,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "MovieList/ApiManager.swift"
-            timestampString = "590421696.853815"
+            timestampString = "590482407.552027"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "70"
@@ -153,7 +153,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "MovieList/ApiManager.swift"
-            timestampString = "590421696.853846"
+            timestampString = "590482407.552058"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "73"
@@ -169,7 +169,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "MovieList/view/DetailViewController.swift"
-            timestampString = "590475950.189636"
+            timestampString = "590483223.193909"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "86"
@@ -185,7 +185,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "MovieList/view/DetailViewController.swift"
-            timestampString = "590475950.189899"
+            timestampString = "590483223.193982"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "113"
@@ -201,7 +201,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "MovieList/view/DetailViewController.swift"
-            timestampString = "590475950.190153"
+            timestampString = "590483223.194048"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "89"
@@ -217,23 +217,23 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "MovieList/view/ViewController.swift"
-            timestampString = "590475950.190429"
+            timestampString = "590483223.194115"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "28"
-            endingLineNumber = "28"
-            landmarkName = "viewWillAppear(_:)"
+            startingLineNumber = "37"
+            endingLineNumber = "37"
+            landmarkName = "viewDidDisappear(_:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "MovieList/view/DetailViewController.swift"
-            timestampString = "590475950.1905349"
+            timestampString = "590483223.194541"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "73"
@@ -249,12 +249,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "MovieList/view/ViewController.swift"
-            timestampString = "590475950.190869"
+            timestampString = "590483223.194615"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "33"
-            endingLineNumber = "33"
-            landmarkName = "viewDidDisappear(_:)"
+            startingLineNumber = "43"
+            endingLineNumber = "43"
+            landmarkName = "getMovieList()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -265,7 +265,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "MovieList/cell/MovieTableViewCell.swift"
-            timestampString = "590475950.191689"
+            timestampString = "590483223.196617"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "24"
@@ -281,28 +281,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "MovieList/view/ViewController.swift"
-            timestampString = "590475950.191757"
+            timestampString = "590483223.196665"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "25"
-            endingLineNumber = "25"
-            landmarkName = "viewWillAppear(_:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "MovieList/view/ViewController.swift"
-            timestampString = "590475950.191823"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "50"
-            endingLineNumber = "50"
-            landmarkName = "getMovieList()"
+            startingLineNumber = "34"
+            endingLineNumber = "34"
+            landmarkName = "viewDidDisappear(_:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -313,7 +297,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "MovieList/cell/MovieTableViewCell.swift"
-            timestampString = "590475950.191875"
+            timestampString = "590483223.196933"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "55"
@@ -329,12 +313,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "MovieList/view/ViewController.swift"
-            timestampString = "590475950.191924"
+            timestampString = "590483223.196973"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "81"
-            endingLineNumber = "81"
-            landmarkName = "tableView(_:numberOfRowsInSection:)"
+            startingLineNumber = "130"
+            endingLineNumber = "130"
+            landmarkName = "setScoreRating(score:id:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -345,13 +329,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "MovieList/view/ViewController.swift"
-            timestampString = "590475950.19197"
+            timestampString = "590483223.197212"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "95"
-            endingLineNumber = "95"
-            landmarkName = "tableView(_:cellForRowAt:)"
-            landmarkType = "7">
+            startingLineNumber = "137"
+            endingLineNumber = "137">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -361,7 +343,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "MovieList/cell/MovieTableViewCell.swift"
-            timestampString = "590475950.1920151"
+            timestampString = "590483223.197437"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "57"
@@ -377,7 +359,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "MovieList/cell/MovieTableViewCell.swift"
-            timestampString = "590475950.19205"
+            timestampString = "590483223.197477"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "58"
@@ -389,11 +371,11 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "MovieList/cell/MovieTableViewCell.swift"
-            timestampString = "590475950.192082"
+            timestampString = "590483223.197513"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "43"
@@ -402,14 +384,14 @@
             landmarkType = "7">
             <Locations>
                <Location
-                  shouldBeEnabled = "Yes"
+                  shouldBeEnabled = "No"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
                   symbolName = "MovieList.MovieTableViewCell.setCell(movieIndex: MovieList.results, scoreRatting: Swift.Double) -&gt; ()"
                   moduleName = "MovieList"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/paweekittiwathanakul/Desktop/Swift%20SQL2/SQLMovieList2/MovieList/cell/MovieTableViewCell.swift"
-                  timestampString = "590475756.1012909"
+                  timestampString = "590476705.071941"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "43"
@@ -417,14 +399,14 @@
                   offsetFromSymbolStart = "5032">
                </Location>
                <Location
-                  shouldBeEnabled = "Yes"
+                  shouldBeEnabled = "No"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
                   symbolName = "MovieList.MovieTableViewCell.setCell(movieIndex: MovieList.results, scoreRatting: Swift.Double) -&gt; ()"
                   moduleName = "MovieList"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/paweekittiwathanakul/Desktop/Swift%20SQL2/SQLMovieList2/MovieList/cell/MovieTableViewCell.swift"
-                  timestampString = "590475756.108014"
+                  timestampString = "590476705.073312"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "43"
@@ -437,11 +419,11 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "MovieList/cell/MovieTableViewCell.swift"
-            timestampString = "590475950.1921149"
+            timestampString = "590483223.197547"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "47"
@@ -457,29 +439,191 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "MovieList/view/ViewController.swift"
-            timestampString = "590475950.192147"
+            timestampString = "590483223.1975811"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "80"
-            endingLineNumber = "80"
-            landmarkName = "tableView(_:numberOfRowsInSection:)"
+            startingLineNumber = "129"
+            endingLineNumber = "129"
+            landmarkName = "setScoreRating(score:id:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "MovieList/view/DetailViewController.swift"
-            timestampString = "590475950.192188"
+            timestampString = "590483223.197818"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "53"
             endingLineNumber = "53"
             landmarkName = "storeRating(rating:)"
             landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "MovieList/view/ViewController.swift"
+            timestampString = "590483223.197862"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "137"
+            endingLineNumber = "137">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "MovieList/view/ViewController.swift"
+            timestampString = "590483223.198076"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "137"
+            endingLineNumber = "137">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "MovieList/view/ViewController.swift"
+            timestampString = "590483223.19828"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "137"
+            endingLineNumber = "137">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "MovieList/view/ViewController.swift"
+            timestampString = "590483223.198516"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "137"
+            endingLineNumber = "137">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "MovieList/view/ViewController.swift"
+            timestampString = "590483223.198709"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "137"
+            endingLineNumber = "137">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "MovieList/view/ViewController.swift"
+            timestampString = "590483223.198926"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "137"
+            endingLineNumber = "137">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "MovieList/view/ViewController.swift"
+            timestampString = "590483223.199105"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "71"
+            endingLineNumber = "71"
+            landmarkName = "prepare(for:sender:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "MovieList/view/ViewController.swift"
+            timestampString = "590483223.199376"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "137"
+            endingLineNumber = "137">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "MovieList/view/ViewController.swift"
+            timestampString = "590483223.1996599"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "69"
+            endingLineNumber = "69"
+            landmarkName = "getMovieList()"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.Result&lt;Swift.Optional&lt;MovieList.movieList&gt;, MovieList.APIError&gt;) -&gt; () in MovieList.ViewController.getMovieList() -&gt; ()"
+                  moduleName = "MovieList"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/paweekittiwathanakul/Desktop/Swift%20SQL2/SQLMovieList2/MovieList/view/ViewController.swift"
+                  timestampString = "590482407.669036"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "65"
+                  endingLineNumber = "65"
+                  offsetFromSymbolStart = "4090">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.Result&lt;Swift.Optional&lt;MovieList.movieList&gt;, MovieList.APIError&gt;) -&gt; () in MovieList.ViewController.getMovieList() -&gt; ()"
+                  moduleName = "MovieList"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/paweekittiwathanakul/Desktop/Swift%20SQL2/SQLMovieList2/MovieList/view/ViewController.swift"
+                  timestampString = "590482407.67186"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "65"
+                  endingLineNumber = "65"
+                  offsetFromSymbolStart = "8953">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

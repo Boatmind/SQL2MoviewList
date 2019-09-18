@@ -15,7 +15,10 @@ class ViewController: UIViewController {
     let defaults = UserDefaults.standard
   
     @IBOutlet weak var movieTableView: UITableView!
-    
+  
+  @IBOutlet weak var loadingView: UIView!
+  
+  
     override func viewDidLoad() {
         super.viewDidLoad()
         getMovieList()
@@ -35,6 +38,7 @@ class ViewController: UIViewController {
   }
     
     func getMovieList() {
+         loadingView.isHidden = false
         let apiManager = APIManager()
         apiManager.getMovie(urlString: "http://api.themoviedb.org/3/discover/movie") { [weak self] (result: Result<movieList?, APIError>) in
             
@@ -42,7 +46,7 @@ class ViewController: UIViewController {
             case .success(let movie):
                 
                 if let movie = movie {
-                  self?.movies = movie.results
+                  self?.movies.append(contentsOf: movie.results)
                   
                   self?.scoreRatting = Array(repeating: 0, count: self?.movies.count ?? 0)
                   for (index, _) in (self?.scoreRatting.enumerated())! {
@@ -52,6 +56,7 @@ class ViewController: UIViewController {
                     
                   }
                   DispatchQueue.main.async {
+                    self?.loadingView.isHidden = true
                     self?.movieTableView.reloadData()
                   }
                   
@@ -94,6 +99,16 @@ extension ViewController :UITableViewDataSource {
         
         return cell
     }
+  
+  func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
+    
+  }
+  
+  func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+    if indexPath.row == movies.count - 1 && loadingView.isHidden {
+       getMovieList()
+    }
+  }
     
     
 }
