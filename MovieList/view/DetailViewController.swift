@@ -9,8 +9,13 @@
 import UIKit
 import Cosmos
 import Kingfisher
+protocol ScoreRating {
+  func setScoreRating(score:Double,id:Int)
+}
 class DetailViewController: UIViewController {
   var indexMovie : Int?
+  var delegate : ScoreRating?
+  var idMovie:Int?
   @IBOutlet weak var cosMisView: CosmosView!
   @IBOutlet weak var moviewImage: UIImageView!
   
@@ -23,29 +28,66 @@ class DetailViewController: UIViewController {
   @IBOutlet weak var language: UILabel!
   
   var detailMovie : DetailMovieList?
+  let defaults2 = UserDefaults.standard
   override func viewDidLoad() {
     super.viewDidLoad()
-    
+   
     guard let indexMovie = indexMovie else {
       return
     }
+    checkDefalue(index: indexMovie)
     getDetailMovie(index: indexMovie)
     //    cosMisView.text = String(Int(detailMovie.vote_average) * Int(detailMovie.vote_count))
     cosMisView.didTouchCosmos = { ratting in
       self.cosMisView.text = String(ratting)
+      
     }
+  }
+  override func viewWillDisappear(_ animated: Bool) {
+    super.viewWillDisappear(animated)
     
+     defaults2.set(cosMisView.rating, forKey: "\(String(describing: indexMovie))")
+    
+    print("DetailRating is :\(cosMisView.rating)")
+    delegate?.setScoreRating(score: cosMisView.rating, id: idMovie ?? 0)
+  }
+  
+  override func viewDidDisappear(_ animated: Bool) {
+    super.viewDidDisappear(animated)
+   
+  }
+  
+  
+  
+  func checkDefalue(index:Int) {
+    let scoreRatting = defaults2.double(forKey: "\(String(describing: indexMovie))")
+    
+    cosMisView.rating = scoreRatting
     
   }
   
   func setUi(data:DetailMovieList) {
+    DispatchQueue.main.sync { // Main Threed
+      tital.text = data.original_title
+      detail.text = data.overview
+    }
     
-    tital.text = data.original_title
-    detail.text = data.overview
+    if !(data.genres?.isEmpty ?? false) {
+      DispatchQueue.main.sync { // Main Threed
+        genres.text = data.genres?[0].name
+      }
+      
+    }else {
+      
+    }
+    DispatchQueue.main.sync {
+      language.text = data.original_language
+    }
     if let urlposter = data.poster_path {
       let poster = URL(string: "https://image.tmdb.org/t/p/original\(urlposter)")
       
       self.moviewImage.kf.setImage(with: poster)
+      
     }
   }
   
@@ -66,8 +108,15 @@ class DetailViewController: UIViewController {
       }
     }
     
-    
-  
-    
   }
 }
+
+
+//  func navigationController(_ navigationController: UINavigationController, didShow viewController: UIViewController, animated: Bool) {
+//      (viewController as? ViewController)?.scoreRatting = cosMisView.rating
+//
+//  }
+
+
+
+

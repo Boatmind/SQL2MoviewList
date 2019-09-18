@@ -13,6 +13,9 @@ struct DetailMovieList :Codable{
   var overview:String?
   var genres:[genresDetail]?
   var poster_path:String?
+  var original_language: String?
+  var vote_average:Double?
+  var vote_count:Double?
 }
 struct genresDetail:Codable {
   var name:String?

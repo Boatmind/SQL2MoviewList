@@ -10,6 +10,9 @@ import UIKit
 
 class ViewController: UIViewController {
     var movies : [results] = []
+    var scoreRatting :[Double] = []
+    var indexpartMovie : Int = 0
+    let defaults = UserDefaults.standard
   
     @IBOutlet weak var movieTableView: UITableView!
     
@@ -17,6 +20,19 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         getMovieList()
     }
+  override func viewWillAppear(_ animated: Bool) {
+    super.viewWillAppear(animated)
+    
+    print("viewwillAppear : \(scoreRatting)")
+    getMovieList()
+    
+  }
+  
+  override func viewDidDisappear(_ animated: Bool) {
+    super.viewDidDisappear(animated)
+    
+
+  }
     
     func getMovieList() {
         let apiManager = APIManager()
@@ -27,6 +43,14 @@ class ViewController: UIViewController {
                 
                 if let movie = movie {
                   self?.movies = movie.results
+                  
+                  self?.scoreRatting = Array(repeating: 0, count: self?.movies.count ?? 0)
+                  for (index, _) in (self?.scoreRatting.enumerated())! {
+                    self?.scoreRatting[index] = (self?.defaults.double(forKey: "\(index)"))!
+                    
+                    print("After index : \(index) and element: \(String(describing: self?.scoreRatting[index]))")
+                    
+                  }
                   DispatchQueue.main.async {
                     self?.movieTableView.reloadData()
                   }
@@ -44,7 +68,8 @@ class ViewController: UIViewController {
       if let viewController = segue.destination as? DetailViewController,
         let sender = sender as? Int {
         viewController.indexMovie = sender
-        
+        viewController.delegate = self
+        viewController.idMovie = indexpartMovie
       }
       
     }
@@ -55,7 +80,6 @@ extension ViewController :UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
         return movies.count
-        
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -63,8 +87,9 @@ extension ViewController :UITableViewDataSource {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "MovieTableViewCell", for: indexPath) as? MovieTableViewCell else {
             return UITableViewCell()
         }
+      
         let movieIndex = movies[indexPath.row]
-        cell.setCell(movieIndex: movieIndex)
+        cell.setCell(movieIndex: movieIndex, scoreRatting: scoreRatting[indexPath.row])
         
         return cell
     }
@@ -73,10 +98,23 @@ extension ViewController :UITableViewDataSource {
 }
 extension ViewController :UITableViewDelegate {
   func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-    
-   
+    self.indexpartMovie = indexPath.row
     performSegue(withIdentifier: "viewGoToDetail", sender: movies[indexPath.row].id)
     
   }
+}
+
+extension ViewController : ScoreRating {
+  func setScoreRating(score: Double,id: Int) {
+    print(score)
+    self.scoreRatting[id] = score
+      print("index :\(id) and element :\(score)")
+      defaults.set(score, forKey: "\(id)")
+      print("Protocal : \(scoreRatting)")
+    
+      self.movieTableView.reloadData()
+  }
+  
+  
 }
 

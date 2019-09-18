@@ -20,8 +20,9 @@ class MovieTableViewCell: UITableViewCell {
   
   @IBOutlet weak var rattingLabel: UILabel!
   
-  func setCell(movieIndex: results) {
-    
+  var score:Double = 0
+  func setCell(movieIndex: results,scoreRatting: Double) {
+    self.score = scoreRatting
     titleLabel.text = movieIndex.title
     popularityLabel.text = String(movieIndex.popularity)
     
@@ -31,11 +32,37 @@ class MovieTableViewCell: UITableViewCell {
       
       movieImage.kf.setImage(with: poster)
       backDropImage.kf.setImage(with: backdrop)
+      
     }
-    let sumratting = (Int(movieIndex.vote_average) * Int(movieIndex.vote_count)) / Int(movieIndex.vote_count)
+   
+    
+    if movieIndex.vote_count == 0 {
+      if score > 0 {
+        let sumratting = (Int(movieIndex.vote_average) * Int(movieIndex.vote_count)) + Int(score * 2)
+        let sumratting2 = Int(movieIndex.vote_count + 1)
+        let ans = sumratting / sumratting2
+        rattingLabel.text = String(ans)
+      }else {
+      let sumratting = (Int(movieIndex.vote_average) * Int(movieIndex.vote_count))
+         rattingLabel.text = String(sumratting)
+      }
+    }else {
+      if score > 0 {
+         let sumratting = (Int(movieIndex.vote_average) * Int(movieIndex.vote_count)) + Int(score * 2)
+         let sumratting2 = Int(movieIndex.vote_count + 1)
+
+         let ans = sumratting / sumratting2
+         rattingLabel.text = String(ans)
+      }else {
+        let sumratting = (Int(movieIndex.vote_average) * Int(movieIndex.vote_count) ) / Int(movieIndex.vote_count)
+        rattingLabel.text = String(sumratting)
+      }
+
+    }
     
     
-    rattingLabel.text = String(sumratting)
+    
+    
     
     
     
