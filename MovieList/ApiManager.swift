@@ -13,7 +13,44 @@ enum APIError: Error {
     case invalidData
 }
 class APIManager {
-    func getMovie(urlString: String, completion: @escaping (Result<movieList?, APIError>) -> Void) {
+  
+  func getMovieASC(urlString: String,pageASC:Int, completion: @escaping (Result<movieList?, APIError>) -> Void) {
+    guard var url = URLComponents(string: urlString) else {
+      return
+    }
+    url.queryItems = [
+      URLQueryItem(name: "api_key", value: "328c283cd27bd1877d9080ccb1604c91"),
+      URLQueryItem(name: "primary_release_date.lte", value: "2016-12-31"),
+      URLQueryItem(name: "sort_by", value: "release_date.asc"),
+      URLQueryItem(name: "page", value: "\(pageASC)")
+    ]
+    //        print(url2)
+    
+    var request = URLRequest(url: url.url!)
+    
+    request.httpMethod = "GET"
+    let task = URLSession.shared.dataTask(with: request) { (data, response, error) in
+      
+      if let _ = error {
+        completion(.failure(.invalidData))
+      } else if let data = data, let response = response as? HTTPURLResponse {
+        
+        if response.statusCode == 200 {
+          
+          do {
+            let values = try JSONDecoder().decode(movieList.self, from: data)
+            completion(.success(values))
+          } catch  {
+            completion(.failure(.invalidJSON))
+            
+          }
+        }
+      }
+    }
+    task.resume()
+  }
+  
+  func getMovie(urlString: String,page:Int, completion: @escaping (Result<movieList?, APIError>) -> Void) {
         guard var url = URLComponents(string: urlString) else {
             return
         }
@@ -21,7 +58,7 @@ class APIManager {
             URLQueryItem(name: "api_key", value: "328c283cd27bd1877d9080ccb1604c91"),
             URLQueryItem(name: "primary_release_date.lte", value: "2016-12-31"),
             URLQueryItem(name: "sort_by", value: "release_date.desc"),
-            URLQueryItem(name: "page", value: "1")
+            URLQueryItem(name: "page", value: "\(page)")
         ]
 //        print(url2)
     

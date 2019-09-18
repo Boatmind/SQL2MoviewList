@@ -13,7 +13,13 @@ class ViewController: UIViewController {
     var scoreRatting :[Double] = []
     var indexpartMovie : Int = 0
     let defaults = UserDefaults.standard
-  
+    var checkFilter:Int = 0
+    var checkScoller:Bool = true
+    var pageASC:Int = 1
+    var pageDESC:Int = 1
+    var isclickASC:Bool = false
+    var isclickBSCE:Bool = true
+    var refreshControl = UIRefreshControl()
     @IBOutlet weak var movieTableView: UITableView!
   
   @IBOutlet weak var loadingView: UIView!
@@ -21,7 +27,9 @@ class ViewController: UIViewController {
   
     override func viewDidLoad() {
         super.viewDidLoad()
-        getMovieList()
+      refreshControl.attributedTitle = NSAttributedString(string: "Pull to refresh")
+      refreshControl.addTarget(self, action: #selector(refresh(sender:)), for: UIControl.Event.valueChanged)
+      movieTableView.addSubview(refreshControl)
     }
   override func viewWillAppear(_ animated: Bool) {
     super.viewWillAppear(animated)
@@ -36,17 +44,125 @@ class ViewController: UIViewController {
     
 
   }
+  
+  @objc func refresh(sender:AnyObject) {
+    // Code to refresh table view
+    if checkFilter == 0 {
+       DispatchQueue.main.async {
+        self.isclickBSCE = true
+        self.getMovieList()
+        self.refreshControl.endRefreshing()
+      }
+    }else{
+      DispatchQueue.main.async {
+        self.isclickASC = true
+        self.getMovieListASC()
+        self.refreshControl.endRefreshing()
+      }
+    }
     
+  }
+  
+  @IBAction func filterItem(_ sender: Any) {
+    let alert = UIAlertController(title: "Saved", message: "Selected Frame is Saved", preferredStyle: .alert)
+    alert.addAction(UIAlertAction(title: "DESC", style:.default , handler: { (UIAlertAction) in
+      self.isclickBSCE = true
+      self.checkFilter = 0
+      self.getMovieList()
+      alert.editButtonItem.isEnabled = false
+      
+      
+    }))
+    alert.addAction(UIAlertAction(title: "ABSC", style:.default , handler: { (UIAlertAction) in
+      self.isclickASC = true
+      self.checkFilter = 1
+      self.getMovieListASC()
+      alert.editButtonItem.isEnabled = false
+      
+      
+    }))
+    alert.addAction(UIAlertAction(title: "Cancle", style:.default , handler: { (UIAlertAction) in
+      
+    }))
+   
+    
+    
+    self.present(alert, animated: true, completion: nil)
+  }
+  
+  func getMovieListASC() {
+    loadingView.isHidden = false
+    let apiManager = APIManager()
+    print(isclickASC)
+    if self.isclickASC {
+           pageASC = 1
+     }else{
+      
+     }
+    apiManager.getMovieASC(urlString: "http://api.themoviedb.org/3/discover/movie", pageASC: pageASC) { [weak self] (result: Result<movieList?, APIError>) in
+      
+      switch result {
+      case .success(let movie):
+        
+        if let movie = movie {
+          if self?.isclickASC ?? false {
+             self?.movies = movie.results
+             self?.isclickASC = false
+          }else {
+             self?.movies.append(contentsOf: movie.results)
+          }
+          
+          self?.scoreRatting = Array(repeating: 0, count: self?.movies.count ?? 0)
+          
+          for (index, _) in (self?.scoreRatting.enumerated())! {
+            self?.scoreRatting[index] = (self?.defaults.double(forKey: "\(index)"))!
+            
+            print("After index : \(index) and element: \(String(describing: self?.scoreRatting[index]))")
+            
+          }
+          DispatchQueue.main.async {
+            self?.pageASC += 1
+            self?.loadingView.isHidden = true
+            self?.movieTableView.reloadData()
+            
+          }
+          
+        }
+        
+      case .failure(let error):
+        print(error)
+      }
+    }
+  }
+  
+  
     func getMovieList() {
          loadingView.isHidden = false
         let apiManager = APIManager()
-        apiManager.getMovie(urlString: "http://api.themoviedb.org/3/discover/movie") { [weak self] (result: Result<movieList?, APIError>) in
+      if self.isclickBSCE {
+              pageDESC = 1
+      }else{
+        
+      }
+      apiManager.getMovie(urlString: "http://api.themoviedb.org/3/discover/movie", page: pageDESC) { [weak self] (result: Result<movieList?, APIError>) in
             
             switch result {
             case .success(let movie):
-                
+              
                 if let movie = movie {
-                  self?.movies.append(contentsOf: movie.results)
+                  
+                  if self?.isclickBSCE ?? false {
+                    self?.movies = movie.results
+                    self?.isclickBSCE = false
+                    
+                  }else {
+                    print("fdsafdsafdsa")
+                    self?.movies.append(contentsOf: movie.results)
+                  }
+                  
+                  
+                  
+                  
                   
                   self?.scoreRatting = Array(repeating: 0, count: self?.movies.count ?? 0)
                   for (index, _) in (self?.scoreRatting.enumerated())! {
@@ -57,6 +173,7 @@ class ViewController: UIViewController {
                   }
                   DispatchQueue.main.async {
                     self?.loadingView.isHidden = true
+                    self?.pageDESC += 1
                     self?.movieTableView.reloadData()
                   }
                   
@@ -76,7 +193,6 @@ class ViewController: UIViewController {
         viewController.delegate = self
         viewController.idMovie = indexpartMovie
       }
-      
     }
   }
 }
@@ -106,7 +222,13 @@ extension ViewController :UITableViewDataSource {
   
   func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
     if indexPath.row == movies.count - 1 && loadingView.isHidden {
-       getMovieList()
+      
+      if checkFilter == 0 {
+         getMovieList()
+      }else{
+         getMovieListASC()
+      }
+      
     }
   }
     
