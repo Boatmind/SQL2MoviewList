@@ -41,7 +41,7 @@
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="189.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="YWi-nG-Bx1">
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ratting" translatesAutoresizingMaskIntoConstraints="NO" id="YWi-nG-Bx1">
                                                     <rect key="frame" x="10" y="10" width="184" height="169.5"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="169.5" id="6LJ-DG-PfP"/>

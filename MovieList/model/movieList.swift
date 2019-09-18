@@ -8,14 +8,14 @@
 
 import Foundation
 
-struct movieList:Codable {
+struct MovieList:Codable {
     var page:Int
     var total_pages:Int
-    var results: [results]
+    var results: [Movie]
     // var genre_ids:[String] = []
 }
 
-struct results:Codable {
+struct Movie: Codable {
     var popularity:Double
     var id:Int?
     var video:Bool
@@ -38,8 +38,18 @@ struct results:Codable {
         case original_language
         case original_title
         case backdrop_path
-        case poster_path
+        case poster_path 
     }
+}
+
+enum Filter {
+  case asc
+  case desc
+}
+
+enum Status {
+  case on
+  case off
 }
 
 

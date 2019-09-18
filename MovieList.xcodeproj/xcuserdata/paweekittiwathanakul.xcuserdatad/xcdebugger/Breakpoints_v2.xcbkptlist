@@ -10,12 +10,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "MovieList/ApiManager.swift"
-            timestampString = "590495535.040002"
+            timestampString = "590510066.128172"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "72"
-            endingLineNumber = "72"
-            landmarkName = "getMovie(urlString:page:completion:)"
+            startingLineNumber = "36"
+            endingLineNumber = "36"
+            landmarkName = "getMovie(urlString:page:filter:completion:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -26,12 +26,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "MovieList/ApiManager.swift"
-            timestampString = "590495535.040043"
+            timestampString = "590510066.128206"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "78"
-            endingLineNumber = "78"
-            landmarkName = "getMovie(urlString:page:completion:)"
+            startingLineNumber = "42"
+            endingLineNumber = "42"
+            landmarkName = "getMovie(urlString:page:filter:completion:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -42,12 +42,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "MovieList/ApiManager.swift"
-            timestampString = "590495535.040079"
+            timestampString = "590510066.128239"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "85"
-            endingLineNumber = "85"
-            landmarkName = "getMovie(urlString:page:completion:)"
+            startingLineNumber = "49"
+            endingLineNumber = "49"
+            landmarkName = "getMovie(urlString:page:filter:completion:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -58,12 +58,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "MovieList/ApiManager.swift"
-            timestampString = "590495535.040114"
+            timestampString = "590510066.128271"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "69"
-            endingLineNumber = "69"
-            landmarkName = "getMovie(urlString:page:completion:)"
+            startingLineNumber = "33"
+            endingLineNumber = "33"
+            landmarkName = "getMovie(urlString:page:filter:completion:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -74,11 +74,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "MovieList/view/ViewController.swift"
-            timestampString = "590495535.040149"
+            timestampString = "590510066.12831"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "248"
-            endingLineNumber = "248"
+            startingLineNumber = "198"
+            endingLineNumber = "198"
             landmarkName = "setScoreRating(score:id:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -90,12 +90,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "MovieList/ApiManager.swift"
-            timestampString = "590495535.040262"
+            timestampString = "590510066.1283441"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "77"
-            endingLineNumber = "77"
-            landmarkName = "getMovie(urlString:page:completion:)"
+            startingLineNumber = "41"
+            endingLineNumber = "41"
+            landmarkName = "getMovie(urlString:page:filter:completion:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -106,12 +106,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "MovieList/ApiManager.swift"
-            timestampString = "590495535.040298"
+            timestampString = "590510066.1283751"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "80"
-            endingLineNumber = "80"
-            landmarkName = "getMovie(urlString:page:completion:)"
+            startingLineNumber = "44"
+            endingLineNumber = "44"
+            landmarkName = "getMovie(urlString:page:filter:completion:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -122,12 +122,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "MovieList/ApiManager.swift"
-            timestampString = "590495535.040332"
+            timestampString = "590510066.128407"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "71"
-            endingLineNumber = "71"
-            landmarkName = "getMovie(urlString:page:completion:)"
+            startingLineNumber = "35"
+            endingLineNumber = "35"
+            landmarkName = "getMovie(urlString:page:filter:completion:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -138,12 +138,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "MovieList/ApiManager.swift"
-            timestampString = "590495535.040367"
+            timestampString = "590510066.1284389"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "73"
-            endingLineNumber = "73"
-            landmarkName = "getMovie(urlString:page:completion:)"
+            startingLineNumber = "37"
+            endingLineNumber = "37"
+            landmarkName = "getMovie(urlString:page:filter:completion:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -154,11 +154,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "MovieList/view/ViewController.swift"
-            timestampString = "590495535.0404021"
+            timestampString = "590510066.128476"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "170"
-            endingLineNumber = "170"
+            startingLineNumber = "126"
+            endingLineNumber = "126"
             landmarkName = "getMovieList()"
             landmarkType = "7">
          </BreakpointContent>
@@ -202,11 +202,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "MovieList/view/ViewController.swift"
-            timestampString = "590495535.04056"
+            timestampString = "590510066.128545"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "255"
-            endingLineNumber = "255"
+            startingLineNumber = "205"
+            endingLineNumber = "205"
             landmarkName = "ViewController"
             landmarkType = "21">
          </BreakpointContent>
@@ -218,13 +218,13 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "MovieList/view/ViewController.swift"
-            timestampString = "590495535.04067"
+            timestampString = "590510066.128585"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "253"
-            endingLineNumber = "253"
-            landmarkName = "setScoreRating(score:id:)"
-            landmarkType = "7">
+            startingLineNumber = "203"
+            endingLineNumber = "203"
+            landmarkName = "ViewController"
+            landmarkType = "21">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -234,13 +234,13 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "MovieList/view/ViewController.swift"
-            timestampString = "590495535.040777"
+            timestampString = "590510066.128625"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "256"
-            endingLineNumber = "256"
-            landmarkName = "ViewController"
-            landmarkType = "21">
+            startingLineNumber = "206"
+            endingLineNumber = "206"
+            landmarkName = "unknown"
+            landmarkType = "0">
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

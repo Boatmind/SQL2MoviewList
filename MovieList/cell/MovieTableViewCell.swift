@@ -21,12 +21,12 @@ class MovieTableViewCell: UITableViewCell {
   @IBOutlet weak var rattingLabel: UILabel!
   
   var score:Double = 0
-  func setCell(movieIndex: results,scoreRatting: Double) {
+  func setCell(movie: Movie,scoreRatting: Double) {
     self.score = scoreRatting
-    titleLabel.text = movieIndex.title
-    popularityLabel.text = String(movieIndex.popularity)
+    titleLabel.text = movie.title
+    popularityLabel.text = String(movie.popularity)
     
-    if let urlposter = movieIndex.poster_path, let urlbackdrop = movieIndex.backdrop_path {
+    if let urlposter = movie.poster_path, let urlbackdrop = movie.backdrop_path {
       let poster = URL(string: "https://image.tmdb.org/t/p/original\( urlposter)")
       let backdrop = URL(string: "https://image.tmdb.org/t/p/original\(urlbackdrop)")
       
@@ -35,39 +35,19 @@ class MovieTableViewCell: UITableViewCell {
       
     }
    
-    
-    if movieIndex.vote_count == 0 {
-      if score > 0 {
-        let sumratting = (Int(movieIndex.vote_average) * Int(movieIndex.vote_count)) + Int(score * 2)
-        let sumratting2 = Int(movieIndex.vote_count + 1)
-        let ans = sumratting / sumratting2
-        rattingLabel.text = String(ans)
-      }else {
-      let sumratting = (Int(movieIndex.vote_average) * Int(movieIndex.vote_count))
-         rattingLabel.text = String(sumratting)
-      }
+    if score > 0 {
+      let sumratting = (Int(movie.vote_average) * Int(movie.vote_count)) + Int(score * 2)
+      let sumratting2 = Int(movie.vote_count + 1)
+      let ans = sumratting / sumratting2
+      rattingLabel.text = String(ans)
     }else {
-      if score > 0 {
-         let sumratting = (Int(movieIndex.vote_average) * Int(movieIndex.vote_count)) + Int(score * 2)
-         let sumratting2 = Int(movieIndex.vote_count + 1)
-
-         let ans = sumratting / sumratting2
-         rattingLabel.text = String(ans)
-      }else {
-        let sumratting = (Int(movieIndex.vote_average) * Int(movieIndex.vote_count) ) / Int(movieIndex.vote_count)
-        rattingLabel.text = String(sumratting)
+      var sumratting: Int
+      if Int(movie.vote_count) == 0 {
+        sumratting = (Int(movie.vote_average) * Int(movie.vote_count))
+      } else {
+        sumratting = (Int(movie.vote_average) * Int(movie.vote_count)) / Int(movie.vote_count)
       }
-
+      rattingLabel.text = String(sumratting)
     }
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
   }
 }

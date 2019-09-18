@@ -9,16 +9,13 @@
 import UIKit
 
 class ViewController: UIViewController {
-    var movies : [results] = []
+    var movies : [Movie] = []
     var scoreRatting :[Double] = []
     var indexpartMovie : Int = 0
     let defaults = UserDefaults.standard
-    var checkFilter:Int = 0
-    var checkScoller:Bool = true
-    var pageASC:Int = 1
-    var pageDESC:Int = 1
-    var isclickASC:Bool = false
-    var isclickBSCE:Bool = true
+    var checkFilter:Filter = .desc
+    var checkStatusButton:Status = .off
+    var page = 1
     var refreshControl = UIRefreshControl()
     @IBOutlet weak var movieTableView: UITableView!
   
@@ -47,36 +44,35 @@ class ViewController: UIViewController {
   
   @objc func refresh(sender:AnyObject) {
     // Code to refresh table view
-    if checkFilter == 0 {
-       DispatchQueue.main.async {
-        self.isclickBSCE = true
+    switch checkFilter {
+    case .asc:
+      DispatchQueue.main.async {
+        
         self.getMovieList()
         self.refreshControl.endRefreshing()
       }
-    }else{
+    case .desc:
       DispatchQueue.main.async {
-        self.isclickASC = true
-        self.getMovieListASC()
+        
         self.refreshControl.endRefreshing()
       }
     }
-    
   }
   
   @IBAction func filterItem(_ sender: Any) {
     let alert = UIAlertController(title: "Saved", message: "Selected Frame is Saved", preferredStyle: .alert)
     alert.addAction(UIAlertAction(title: "DESC", style:.default , handler: { (UIAlertAction) in
-      self.isclickBSCE = true
-      self.checkFilter = 0
+      self.checkStatusButton = .on
+      self.checkFilter = .desc
       self.getMovieList()
       alert.editButtonItem.isEnabled = false
       
       
     }))
     alert.addAction(UIAlertAction(title: "ABSC", style:.default , handler: { (UIAlertAction) in
-      self.isclickASC = true
-      self.checkFilter = 1
-      self.getMovieListASC()
+      self.checkStatusButton = .on
+      self.checkFilter = .asc
+      self.getMovieList()
       alert.editButtonItem.isEnabled = false
       
       
@@ -84,85 +80,45 @@ class ViewController: UIViewController {
     alert.addAction(UIAlertAction(title: "Cancle", style:.default , handler: { (UIAlertAction) in
       
     }))
-   
-    
-    
+
     self.present(alert, animated: true, completion: nil)
   }
-  
-  func getMovieListASC() {
-    loadingView.isHidden = false
-    let apiManager = APIManager()
-    print(isclickASC)
-    if self.isclickASC {
-           pageASC = 1
-     }else{
-      
-     }
-    apiManager.getMovieASC(urlString: "http://api.themoviedb.org/3/discover/movie", pageASC: pageASC) { [weak self] (result: Result<movieList?, APIError>) in
-      
-      switch result {
-      case .success(let movie):
-        
-        if let movie = movie {
-          if self?.isclickASC ?? false {
-             self?.movies = movie.results
-             self?.isclickASC = false
-          }else {
-             self?.movies.append(contentsOf: movie.results)
-          }
-          
-          self?.scoreRatting = Array(repeating: 0, count: self?.movies.count ?? 0)
-          
-          for (index, _) in (self?.scoreRatting.enumerated())! {
-            self?.scoreRatting[index] = (self?.defaults.double(forKey: "\(index)"))!
-            
-            print("After index : \(index) and element: \(String(describing: self?.scoreRatting[index]))")
-            
-          }
-          DispatchQueue.main.async {
-            self?.pageASC += 1
-            self?.loadingView.isHidden = true
-            self?.movieTableView.reloadData()
-            
-          }
-          
-        }
-        
-      case .failure(let error):
-        print(error)
-      }
-    }
-  }
-  
-  
+
     func getMovieList() {
+         var filter = ""
          loadingView.isHidden = false
-        let apiManager = APIManager()
-      if self.isclickBSCE {
-              pageDESC = 1
-      }else{
+         let apiManager = APIManager()
+      
+      switch checkFilter {
+      case .asc:
+            filter = "asc"
+         if checkStatusButton == .on {
+            page = 1
+          
+         }else {
+         }
         
+      case .desc:
+            filter = "desc"
+         if checkStatusButton == .on {
+            page = 1
+          
+         }else {
+         }
       }
-      apiManager.getMovie(urlString: "http://api.themoviedb.org/3/discover/movie", page: pageDESC) { [weak self] (result: Result<movieList?, APIError>) in
+
+      apiManager.getMovie(urlString: "http://api.themoviedb.org/3/discover/movie", page: page, filter: filter) { [weak self] (result: Result<MovieList?, APIError>) in
             
             switch result {
             case .success(let movie):
-              
                 if let movie = movie {
                   
-                  if self?.isclickBSCE ?? false {
-                    self?.movies = movie.results
-                    self?.isclickBSCE = false
-                    
-                  }else {
-                    print("fdsafdsafdsa")
-                    self?.movies.append(contentsOf: movie.results)
+                  if self?.checkStatusButton == .on {
+                     self?.movies = movie.results
+                     self?.checkStatusButton = .off
+                  }else{
+                     self?.movies.append(contentsOf: movie.results)
                   }
-                  
-                  
-                  
-                  
                   
                   self?.scoreRatting = Array(repeating: 0, count: self?.movies.count ?? 0)
                   for (index, _) in (self?.scoreRatting.enumerated())! {
@@ -173,7 +129,7 @@ class ViewController: UIViewController {
                   }
                   DispatchQueue.main.async {
                     self?.loadingView.isHidden = true
-                    self?.pageDESC += 1
+                    self?.page += 1
                     self?.movieTableView.reloadData()
                   }
                   
@@ -210,25 +166,17 @@ extension ViewController :UITableViewDataSource {
             return UITableViewCell()
         }
       
-        let movieIndex = movies[indexPath.row]
-        cell.setCell(movieIndex: movieIndex, scoreRatting: scoreRatting[indexPath.row])
+        let movie = movies[indexPath.row]
+        cell.setCell(movie: movie, scoreRatting: scoreRatting[indexPath.row])
         
         return cell
     }
   
-  func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
-    
-  }
+  
   
   func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
     if indexPath.row == movies.count - 1 && loadingView.isHidden {
-      
-      if checkFilter == 0 {
-         getMovieList()
-      }else{
-         getMovieListASC()
-      }
-      
+       getMovieList()
     }
   }
     

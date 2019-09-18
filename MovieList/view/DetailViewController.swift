@@ -9,12 +9,12 @@
 import UIKit
 import Cosmos
 import Kingfisher
-protocol ScoreRating {
+protocol ScoreRating: class {
   func setScoreRating(score:Double,id:Int)
 }
 class DetailViewController: UIViewController {
   var indexMovie : Int?
-  var delegate : ScoreRating?
+  weak var delegate : ScoreRating?
   var idMovie:Int?
   @IBOutlet weak var cosMisView: CosmosView!
   @IBOutlet weak var moviewImage: UIImageView!
