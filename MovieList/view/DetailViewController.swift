@@ -27,8 +27,11 @@ class DetailViewController: UIViewController {
   
   @IBOutlet weak var language: UILabel!
   
+  @IBAction func ButtonTapped(_ sender: Any) {
+//  self.defaults.set(4.0, forKey: "\(String(describing: indexMovie))")
+  }
   var detailMovie : DetailMovieList?
-  let defaults2 = UserDefaults.standard
+  let defaults = UserDefaults.standard
   override func viewDidLoad() {
     super.viewDidLoad()
    
@@ -39,15 +42,22 @@ class DetailViewController: UIViewController {
     getDetailMovie(index: indexMovie)
     //    cosMisView.text = String(Int(detailMovie.vote_average) * Int(detailMovie.vote_count))
     cosMisView.didTouchCosmos = { ratting in
-      self.cosMisView.text = String(ratting)
-      
+      DispatchQueue.main.async {
+        self.cosMisView.text = String(ratting)
+        self.storeRating(rating: ratting)
+      }
     }
   }
+  
+  func storeRating(rating: Double){
+    self.defaults.set(rating, forKey: "\(indexMovie ?? 0)")
+    print(defaults.double(forKey: "\(indexMovie ?? 0)"))
+  }
+  
   override func viewWillDisappear(_ animated: Bool) {
     super.viewWillDisappear(animated)
     
-     defaults2.set(cosMisView.rating, forKey: "\(String(describing: indexMovie))")
-    
+//    defaults.set(cosMisView.rating, forKey: "\(String(describing: indexMovie))")
     print("DetailRating is :\(cosMisView.rating)")
     delegate?.setScoreRating(score: cosMisView.rating, id: idMovie ?? 0)
   }
@@ -60,7 +70,7 @@ class DetailViewController: UIViewController {
   
   
   func checkDefalue(index:Int) {
-    let scoreRatting = defaults2.double(forKey: "\(String(describing: indexMovie))")
+    let scoreRatting = defaults.double(forKey: "\(indexMovie ?? 0)")
     
     cosMisView.rating = scoreRatting
     
@@ -101,7 +111,6 @@ class DetailViewController: UIViewController {
         if let movie = movie {
           
           self?.setUi(data: movie)
-          
         }
       case .failure(_):
         print("error")

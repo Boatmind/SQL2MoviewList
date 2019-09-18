@@ -189,6 +189,13 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mnX-Vw-CMO">
+                                <rect key="frame" x="195.5" y="633" width="46" height="30"/>
+                                <state key="normal" title="Button"/>
+                                <connections>
+                                    <action selector="ButtonTapped:" destination="W24-Ne-Fsx" eventType="touchUpInside" id="ZO6-Y1-hcN"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
@@ -196,6 +203,8 @@
                             <constraint firstItem="uRL-hE-i6d" firstAttribute="top" secondItem="r2r-9C-2HH" secondAttribute="bottom" constant="46.5" id="4N7-WK-6pN"/>
                             <constraint firstItem="m8c-vk-Asq" firstAttribute="trailing" secondItem="fAM-ca-wZ8" secondAttribute="trailing" constant="10" id="4hD-2o-qp8"/>
                             <constraint firstItem="sTB-3T-Qkr" firstAttribute="leading" secondItem="m8c-vk-Asq" secondAttribute="leading" id="5gC-3o-AZz"/>
+                            <constraint firstItem="mnX-Vw-CMO" firstAttribute="top" secondItem="uRL-hE-i6d" secondAttribute="bottom" constant="8" id="6Hv-oP-6PZ"/>
+                            <constraint firstItem="mnX-Vw-CMO" firstAttribute="centerX" secondItem="uRL-hE-i6d" secondAttribute="centerX" id="6bI-Ye-utT"/>
                             <constraint firstItem="lIp-1d-Htp" firstAttribute="leading" secondItem="m8c-vk-Asq" secondAttribute="leading" constant="33" id="6s7-Um-yAv"/>
                             <constraint firstItem="r2r-9C-2HH" firstAttribute="leading" secondItem="m8c-vk-Asq" secondAttribute="leading" constant="33" id="8tI-hf-vSY"/>
                             <constraint firstItem="m8c-vk-Asq" firstAttribute="trailing" secondItem="VIi-Nl-BrA" secondAttribute="trailing" constant="87" id="Lnd-V1-zDh"/>
