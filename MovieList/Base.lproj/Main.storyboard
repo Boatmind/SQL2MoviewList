@@ -108,14 +108,32 @@
                                     <outlet property="delegate" destination="BYZ-38-t0r" id="Kx8-ap-dMe"/>
                                 </connections>
                             </tableView>
+                            <view alpha="0.5" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="EXJ-bq-TGg">
+                                <rect key="frame" x="0.0" y="88" width="414" height="725"/>
+                                <subviews>
+                                    <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="Qgr-UI-hA1">
+                                        <rect key="frame" x="188.5" y="344" width="37" height="37"/>
+                                        <color key="color" red="1" green="0.30980800819999998" blue="0.21455023540000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                    </activityIndicatorView>
+                                </subviews>
+                                <color key="backgroundColor" cocoaTouchSystemColor="scrollViewTexturedBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstItem="Qgr-UI-hA1" firstAttribute="centerY" secondItem="EXJ-bq-TGg" secondAttribute="centerY" id="Uli-mM-GcP"/>
+                                    <constraint firstItem="Qgr-UI-hA1" firstAttribute="centerX" secondItem="EXJ-bq-TGg" secondAttribute="centerX" id="md2-tG-BOf"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstItem="EXJ-bq-TGg" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="65B-Xp-0aj"/>
                             <constraint firstItem="KfC-6s-NHn" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="Qhr-7R-D2u"/>
                             <constraint firstItem="uF0-nu-Nt6" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="topMargin" constant="-15" id="Y0D-DR-a32"/>
+                            <constraint firstItem="EXJ-bq-TGg" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="Zhi-iV-JDA"/>
                             <constraint firstItem="KfC-6s-NHn" firstAttribute="top" secondItem="uF0-nu-Nt6" secondAttribute="bottom" id="dVJ-6b-SwQ"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="KfC-6s-NHn" secondAttribute="trailing" id="dwK-wL-XRw"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="EXJ-bq-TGg" secondAttribute="bottom" id="gOE-EW-490"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="KfC-6s-NHn" secondAttribute="bottom" id="ltC-Gj-CYK"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="EXJ-bq-TGg" secondAttribute="trailing" id="mtK-Ig-X6E"/>
                             <constraint firstItem="uF0-nu-Nt6" firstAttribute="leading" secondItem="KfC-6s-NHn" secondAttribute="leading" id="oqu-Hl-W9g"/>
                             <constraint firstItem="uF0-nu-Nt6" firstAttribute="trailing" secondItem="KfC-6s-NHn" secondAttribute="trailing" id="qyd-4R-n7K"/>
                         </constraints>
@@ -124,6 +142,7 @@
                     <navigationItem key="navigationItem" id="hzq-vH-phY"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
+                        <outlet property="loadingView" destination="EXJ-bq-TGg" id="NgQ-So-O03"/>
                         <outlet property="movieTableView" destination="KfC-6s-NHn" id="BUl-mO-c3E"/>
                         <segue destination="W24-Ne-Fsx" kind="show" identifier="viewGoToDetail" id="HkN-lD-140"/>
                     </connections>

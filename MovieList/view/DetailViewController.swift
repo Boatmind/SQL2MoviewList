@@ -59,7 +59,7 @@ class DetailViewController: UIViewController {
     
 //    defaults.set(cosMisView.rating, forKey: "\(String(describing: indexMovie))")
     print("DetailRating is :\(cosMisView.rating)")
-    delegate?.setScoreRating(score: cosMisView.rating, id: idMovie ?? 0)
+    delegate?.setScoreRating(score: cosMisView.rating, id: indexMovie ?? 0)
   }
   
   override func viewDidDisappear(_ animated: Bool) {
