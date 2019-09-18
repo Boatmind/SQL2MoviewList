@@ -10,35 +10,40 @@ import Foundation
 
 struct MovieList:Codable {
     var page:Int
-    var total_pages:Int
+    var totalPages:Int
     var results: [Movie]
     // var genre_ids:[String] = []
+  private enum CodingKeys: String, CodingKey {
+    case page
+    case totalPages = "total_pages"
+    case results
+  }
 }
 
 struct Movie: Codable {
     var popularity:Double
     var id:Int?
     var video:Bool
-    var vote_count:Int
-    var vote_average:Double
+    var voteCount:Int
+    var voteAverage:Double
     var title:String
-    var release_date:String
-    var original_language:String
-    var original_title:String
-    var backdrop_path:String?
-    var poster_path:String?
+    var releaseDate:String
+    var originalLanguage:String
+    var originalTitle:String
+    var backdropPath:String?
+    var posterPath:String?
     private enum CodingKeys: String, CodingKey {
         case popularity
         case id
         case video
-        case vote_count
-        case vote_average
+        case voteCount = "vote_count"
+        case voteAverage = "vote_average"
         case title
-        case release_date
-        case original_language
-        case original_title
-        case backdrop_path
-        case poster_path 
+        case releaseDate = "release_date"
+        case originalLanguage = "original_language"
+        case originalTitle = "original_title"
+        case backdropPath = "backdrop_path"
+        case posterPath = "poster_path"
     }
 }
 
