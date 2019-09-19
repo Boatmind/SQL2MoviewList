@@ -24,24 +24,10 @@ class ViewController: UIViewController {
   
     override func viewDidLoad() {
         super.viewDidLoad()
-      refreshControl.attributedTitle = NSAttributedString(string: "Pull to refresh")
-      refreshControl.addTarget(self, action: #selector(refresh(sender:)), for: UIControl.Event.valueChanged)
-      movieTableView.addSubview(refreshControl)
+        getMovieList()
+        setRefreshControl()
     }
-  override func viewWillAppear(_ animated: Bool) {
-    super.viewWillAppear(animated)
-    
-    print("viewwillAppear : \(scoreRatting)")
-    getMovieList()
-    
-  }
-  
-  override func viewDidDisappear(_ animated: Bool) {
-    super.viewDidDisappear(animated)
-    
 
-  }
-  
   @objc func refresh(sender:AnyObject) {
     // Code to refresh table view
     switch checkFilter {
@@ -67,7 +53,6 @@ class ViewController: UIViewController {
       self.getMovieList()
       alert.editButtonItem.isEnabled = false
       
-      
     }))
     alert.addAction(UIAlertAction(title: "ABSC", style:.default , handler: { (UIAlertAction) in
       self.checkStatusButton = .on
@@ -82,6 +67,11 @@ class ViewController: UIViewController {
     }))
 
     self.present(alert, animated: true, completion: nil)
+  }
+  func setRefreshControl() {
+    refreshControl.attributedTitle = NSAttributedString(string: "Pull to refresh")
+    refreshControl.addTarget(self, action: #selector(refresh(sender:)), for: UIControl.Event.valueChanged)
+    movieTableView.addSubview(refreshControl)
   }
 
     func getMovieList() {
