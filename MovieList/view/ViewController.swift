@@ -108,7 +108,7 @@ class ViewController: UIViewController {
           }else{
             self?.movies.append(contentsOf: movie.results)
           }
-          
+
           self?.addValueScoreRatting()
           
           DispatchQueue.main.async {
@@ -131,12 +131,7 @@ class ViewController: UIViewController {
       self.scoreRatting[index] = (self.defaults.double(forKey: "\(index)"))
     }
   }
-  
-  func checkStatusButton(movie:[Movie]) {
-    
-    
-  }
-  
+
   override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
     if segue.identifier == "viewGoToDetail" {
       if let viewController = segue.destination as? DetailViewController,

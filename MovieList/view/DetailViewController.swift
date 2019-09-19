@@ -75,7 +75,7 @@ class DetailViewController: UIViewController {
   
   func setUi(data:DetailMovieList) {
     DispatchQueue.main.sync { // Main Threed
-      titalLabel.text = data.original_title
+      titalLabel.text = data.originalTitle
       detailLabel.text = data.overview
     }
     
@@ -90,9 +90,9 @@ class DetailViewController: UIViewController {
       }
     }
     DispatchQueue.main.sync {
-      languageLabel.text = data.original_language
+      languageLabel.text = data.originalLanguage
     }
-    if let urlposter = data.poster_path {
+    if let urlposter = data.posterPath {
       let poster = URL(string: "https://image.tmdb.org/t/p/original\(urlposter)")
       
       self.moviewImageView.kf.setImage(with: poster)
@@ -108,7 +108,6 @@ class DetailViewController: UIViewController {
       case .success(let movie):
         
         if let movie = movie {
-          
           self?.setUi(data: movie)
         }
       case .failure(_):
