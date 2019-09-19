@@ -40,7 +40,7 @@ class DetailViewController: UIViewController {
     }
     checkDefalue(index: indexMovie)
     getDetailMovie(index: indexMovie)
-    //    cosMisView.text = String(Int(detailMovie.vote_average) * Int(detailMovie.vote_count))
+   
     cosMisView.didTouchCosmos = { ratting in
       DispatchQueue.main.async {
         self.cosMisView.text = String(ratting)
