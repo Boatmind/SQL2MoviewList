@@ -80,8 +80,20 @@ class DetailViewController: UIViewController {
     }
     
     if !(data.genres?.isEmpty ?? false) {
+      var valueCatagory = ""
+      if let data = data.genres {
+        
+        
+        for (index, value) in (data.enumerated()) {
+          if let value = value.name{
+             valueCatagory += "\(value) "
+          }
+        }
+      }
+      
       DispatchQueue.main.sync { // Main Threed
-        catagoryLabel.text = data.genres?[0].name
+        catagoryLabel.text = valueCatagory
+        
       }
       
     }else {

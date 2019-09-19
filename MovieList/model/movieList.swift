@@ -47,7 +47,7 @@ struct Movie: Codable {
     }
 }
 
-enum Filter {
+enum Filter: String {
   case asc
   case desc
 }

@@ -50,4 +50,10 @@ class MovieTableViewCell: UITableViewCell {
       rattingLabel.text = String(sumratting)
     }
   }
+  
+  override func prepareForReuse() {
+    super.prepareForReuse()
+    movieImage.image = nil
+    backDropImage.image = nil
+  }
 }
