@@ -16,22 +16,18 @@ class DetailViewController: UIViewController {
   var indexMovie : Int?
   weak var delegate : ScoreRating?
   var idMovie:Int?
-  @IBOutlet weak var cosMisView: CosmosView!
-  @IBOutlet weak var moviewImage: UIImageView!
-  
-  @IBOutlet weak var tital: UILabel!
-  
-  @IBOutlet weak var detail: UILabel!
-  
-  @IBOutlet weak var genres: UILabel!
-  
-  @IBOutlet weak var language: UILabel!
-  
-  @IBAction func ButtonTapped(_ sender: Any) {
-//  self.defaults.set(4.0, forKey: "\(String(describing: indexMovie))")
-  }
   var detailMovie : DetailMovieList?
   let defaults = UserDefaults.standard
+  
+  @IBOutlet weak var cosMisView: CosmosView!
+  @IBOutlet weak var moviewImageView: UIImageView!
+  @IBOutlet weak var titalLabel: UILabel!
+  @IBOutlet weak var detailLabel
+  : UILabel!
+  @IBOutlet weak var catagoryLabel: UILabel!
+  @IBOutlet weak var languageLabel: UILabel!
+  
+  
   override func viewDidLoad() {
     super.viewDidLoad()
    
@@ -79,27 +75,27 @@ class DetailViewController: UIViewController {
   
   func setUi(data:DetailMovieList) {
     DispatchQueue.main.sync { // Main Threed
-      tital.text = data.original_title
-      detail.text = data.overview
+      titalLabel.text = data.original_title
+      detailLabel.text = data.overview
     }
     
     if !(data.genres?.isEmpty ?? false) {
       DispatchQueue.main.sync { // Main Threed
-        genres.text = data.genres?[0].name
+        catagoryLabel.text = data.genres?[0].name
       }
       
     }else {
          DispatchQueue.main.async {
-         self.genres.text = "-"
+         self.catagoryLabel.text = "-"
       }
     }
     DispatchQueue.main.sync {
-      language.text = data.original_language
+      languageLabel.text = data.original_language
     }
     if let urlposter = data.poster_path {
       let poster = URL(string: "https://image.tmdb.org/t/p/original\(urlposter)")
       
-      self.moviewImage.kf.setImage(with: poster)
+      self.moviewImageView.kf.setImage(with: poster)
       
     }
   }

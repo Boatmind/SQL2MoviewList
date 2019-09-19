@@ -44,7 +44,7 @@ class MovieTableViewCell: UITableViewCell {
       var sumratting: Int
       if Int(movie.voteCount) == 0 {
         sumratting = (Int(movie.voteAverage) * Int(movie.voteCount))
-      } else {
+      }else {
         sumratting = (Int(movie.voteAverage) * Int(movie.voteCount)) / Int(movie.voteCount)
       }
       rattingLabel.text = String(sumratting)
