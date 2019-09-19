@@ -73,6 +73,9 @@ class ViewController: UIViewController {
     refreshControl.addTarget(self, action: #selector(refresh(sender:)), for: UIControl.Event.valueChanged)
     movieTableView.addSubview(refreshControl)
   }
+  func set() {
+    
+  }
 
     func getMovieList() {
          var filter = ""
